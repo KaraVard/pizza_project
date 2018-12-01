@@ -1,0 +1,51 @@
+<!doctype html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    {%load static%}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>Pizza Italia</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-center navbar-secondary text-light  bg-secondary">
+      <span class="navbar-brand" mb-0 h1 style="color:white">Welcome to Pizza Italia</span>
+      <div >
+        <div class = 'raw'>
+            <div class = 'text_center col-sm-20 col-sm-offset-3'>
+                <form action = {%url 'order' %} class = "form-inline" >
+                    <select name = pizza required >
+                        <option value="" disabled selected>Select your pizza</option>
+                        {%for p_name in names%}
+                        <option>{{p_name}}</option>>
+                        {%endfor%}
+                    </select>
+                    <select name="size" required>
+                        <option value="" disabled selected>Pizza size</option>
+                        {%for size in sizes%}
+                        <option>{{size}}</option>
+                        {%endfor%}
+                    </select >
+                    <input type="Text" name = "c_name" style="text-align: center" placeholder="Your Name"required>
+                    <input type="Text" name = "adress" placeholder="Your adress" style="text-align: center" required>
+                    <input class = 'btn btn-primary'allighn = center  type="submit" value = "Order">
+               </form>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      </div>
+    </nav>
+    <div class="container">
+        <img class="pt-4 aa" src="{% static "Pizza/Pizza.jpg" %}" >
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
